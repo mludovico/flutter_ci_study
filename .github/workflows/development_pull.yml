@@ -13,7 +13,7 @@ jobs:
     runs-on: macos-latest
 
     steps:
-      - run: pwd
       - name: Current dir
-      - run: git --version
+        run: pwd
       - name: git version
+        run: git --version
