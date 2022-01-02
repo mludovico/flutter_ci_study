@@ -15,11 +15,11 @@ jobs:
     steps:
       - name: Get Flutter
         run: "git clone https://github.com/flutter/flutter.git"
-      - name: Set flutter version and branch
-        run: |
-          - "git fetch origin tags/2.6.0-0.0.pre"
-          - "git checkout tags/2.6.0-0.0.pre"
-      - name: Add to path
-        run: "export PATH=\"$PATH:`pwd`/flutter/bin\""
+      - name: Fetch flutter version
+        run: git fetch origin tags/2.6.0-0.0.pre
+      - name: Checkout version
+        run: git checkout tags/2.6.0-0.0.pre
+      - name: Add flutter to path
+        run: export PATH=\"$PATH:`pwd`/flutter/bin\"
       - name: Initialize Flutter
-        run: "flutter doctor"
+        run: flutter doctor
