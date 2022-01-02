@@ -15,3 +15,7 @@ jobs:
     steps:
       - name: Setup Flutter
         run: git clone https://github.com/flutter/flutter.git && cd flutter && git fetch origin tags/2.6.0-0.0.pre && git checkout tags/2.6.0-0.0.pre && export PATH="$PATH:`pwd`/bin && flutter doctor"
+      - name: Get project
+        run: cd .. && git clone https://github.com/mludovico/flutter_ci_study.git project
+      - name: Analyze
+        run: cd project && flutter analyze
