@@ -18,4 +18,4 @@ jobs:
       - name: Get project
         run: ls && pwd && git clone https://github.com/mludovico/flutter_ci_study.git project && pwd && ls
       - name: Analyze
-        run: ls && pwd && cd project && flutter analyze && pwd && ls
+        run: ls && pwd && cd project && ../flutter/bin/flutter analyze && pwd && ls
