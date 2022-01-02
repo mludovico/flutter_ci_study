@@ -5,9 +5,10 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
+  final Variable = 1;
   @override
   Widget build(BuildContext context) {
+    print('$Variable');
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
