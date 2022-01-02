@@ -16,11 +16,9 @@ jobs:
       - name: Get Flutter
         run: "git clone https://github.com/flutter/flutter.git"
       - name: Set flutter version and branch
-        env:
-          flutter_version: 2.6.0-0.0.pre
         run: |
-          - "git fetch origin tags/$flutter_version"
-          - "git checkout tags/$flutter_version"
+          - "git fetch origin tags/2.6.0-0.0.pre"
+          - "git checkout tags/2.6.0-0.0.pre"
       - name: Add to path
         run: "export PATH=\"$PATH:`pwd`/flutter/bin\""
       - name: Initialize Flutter
