@@ -13,7 +13,15 @@ jobs:
     runs-on: macos-latest
 
     steps:
-      - name: Current dir
-        run: pwd
-      - name: git version
-        run: git --version
+      - name: Get Flutter
+        run: "git clone https://github.com/flutter/flutter.git"
+      - name: Set flutter version and branch
+        env:
+          flutter_version: 2.6.0-0.0.pre
+        run: |
+          - git fetch origin tags/$flutter_version
+          - git checkout tags/$flutter_version
+      - name: Add to path
+        run: export PATH="$PATH:`pwd`/flutter/bin"
+      - name: Initialize Flutter
+        run: flutter doctor
