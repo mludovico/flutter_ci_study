@@ -19,9 +19,9 @@ jobs:
         env:
           flutter_version: 2.6.0-0.0.pre
         run: |
-          - git fetch origin tags/$flutter_version
-          - git checkout tags/$flutter_version
+          - "git fetch origin tags/$flutter_version"
+          - "git checkout tags/$flutter_version"
       - name: Add to path
-        run: export PATH="$PATH:`pwd`/flutter/bin"
+        run: "export PATH=\"$PATH:`pwd`/flutter/bin\""
       - name: Initialize Flutter
-        run: flutter doctor
+        run: "flutter doctor"
