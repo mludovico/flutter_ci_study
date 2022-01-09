@@ -12,4 +12,8 @@ jobs:
 
       - name: setup Flutter
         run: |
-          git clone https://github.com/flutter/flutter.git flutter-sdk && cd flutter-sdk && git fetch --all --tags && git checkout tags/2.6.0-0.0.pre && ./bin/flutter doctor
+          git clone https://github.com/flutter/flutter.git flutter-sdk && cd flutter-sdk && git fetch --all --tags && git checkout tags/2.6.0-0.0.pre && ./bin/flutter doctor && pwd
+          
+      - name: setup Firebase CLI
+        run: |
+          brew install firebase-cli && firebase login && pwd
