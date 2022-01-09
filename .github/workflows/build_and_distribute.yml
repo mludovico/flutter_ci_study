@@ -16,4 +16,4 @@ jobs:
           
       - name: setup Firebase CLI
         run: |
-          brew install firebase-cli && firebase login && pwd
+          brew install firebase-cli && pwd
