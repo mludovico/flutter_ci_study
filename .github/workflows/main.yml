@@ -18,6 +18,8 @@ jobs:
   # This job will run the tests and report the results
   test:
     runs-on: ubuntu-latest
+    env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     steps:
       - name: Check repository
         run: |
@@ -25,6 +27,14 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y git
           git clone https://github.com/flutter/flutter.git flutter-sdk
+          export PATH=$PATH:$(pwd)/flutter-sdk/bin
+          cd flutter-sdk
+          git checkout flags/2.6.0-0.0.pre
+          flutter doctor
+          cd ..
+          git clone https://mludovico:$GITHUB_TOKEN@github.com/mludovico/flutter_ci_study.git app
+          cd app
+          flutter analyze
   # This workflow contains a single job called "build"
   build:
     # The type of runner that the job will run on
