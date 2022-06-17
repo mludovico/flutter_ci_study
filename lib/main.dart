@@ -8,7 +8,6 @@ class MyApp extends StatelessWidget {
   final Variable = 1;
   @override
   Widget build(BuildContext context) {
-    print('$Variable');
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
