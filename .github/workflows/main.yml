@@ -29,7 +29,7 @@ jobs:
           git clone https://github.com/flutter/flutter.git flutter-sdk
           export PATH=$PATH:$(pwd)/flutter-sdk/bin
           cd flutter-sdk
-          git checkout flags/2.6.0-0.0.pre
+          git checkout tags/2.6.0-0.0.pre
           flutter doctor
           cd ..
           git clone https://mludovico:$GITHUB_TOKEN@github.com/mludovico/flutter_ci_study.git app
